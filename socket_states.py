@@ -27,7 +27,7 @@ def get_socket_states(proc_filename):
                 if cols:
                     state = cols[3]
                     if state in tcp_states:
-                        if state in socket_states:
+                        if tcp_states[state] in socket_states:
                             socket_states[tcp_states[state]] += 1
                         else:
                             socket_states[tcp_states[state]] = 1
